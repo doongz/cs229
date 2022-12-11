@@ -69,13 +69,17 @@ The course will also discuss recent applications of machine learning, such as to
 
 ### Part II Deep learning
 
-- **Supervised learning with non-linear mod- els**
+- **Supervised learning with non-linear models**
 
 - **Neural networks**
 
 - **Backpropagation**
 
 - **Vectorization over training examples**
+
+训练样本集向量化。在进行深度学习领域之前，小规模数据使用for循环可能就足够用了，可是对现代的深度学习网络和当前规模的数据集来说，算法有更高的算力开销。如果用了for循环，代码运行就会很慢。
+
+这就需要使用向量化了。向量化和for循环不同，能够利用矩阵线性代数的优势，还能利用一些高度优化的数值计算的线性代数包（比如BLAS），因此能使神经网络的计算运行更快。
 
 ### Part III Generalization and regularization
 
@@ -113,13 +117,15 @@ Kmeans算法是最常用的聚类算法，主要思想是:在给定K值和K个�
 
 ICA 已用于在各种应用中提取源信号，包括医疗信号、生物测试和音频信号。当 ICA 可以删除或维护单个源时，它也称为降维算法。在此活动期间可以过滤或删除一些信号，这也称为过滤操作。
 
-- **Self-supervised learning and foundation models**
+- **Self-supervised learning**
 
 自监督学习，是无监督学习里面的一种，主要是希望能够学习到一种**通用的特征表达**用于**下游任务 (Downstream Tasks)**。 其主要的方式就是通过自己监督自己。
 
 在预训练阶段我们使用**无标签的数据集 (unlabeled data)**，因为有标签的数据集**很贵**，打标签得要多少人工劳力去标注，那成本是相当高的。相反，无标签的数据集网上随便到处爬，它**便宜**。在训练模型参数的时候，我们不追求把这个参数用带标签数据从**初始化的一张白纸**给一步训练到位，原因就是数据集太贵。
 
 于是**Self-Supervised Learning**就想先把参数从**一张白纸**训练到**初步成型**，再从**初步成型**训练到**完全成型**。注意这是2个阶段。这个**训练到初步成型的东西**，我们把它叫做**Visual Representation**。预训练模型的时候，就是模型参数从**一张白纸**到**初步成型**的这个过程，还是用无标签数据集。等我把模型参数训练个八九不离十，这时候再根据你**下游任务 (Downstream Tasks)**的不同去用带标签的数据集把参数训练到**完全成型**，那这时用的数据集量就不用太多了，因为参数经过了第1阶段就已经训练得差不多了。
+
+- **foundation models**
 
 AI专家**将大模型统一命名为Foundation Models**，论文肯定了Foundation Models对智能体基本认知能力的推动作用，同时也指出大模型**呈现出「涌现」与「同质化」的特性**。
 
